@@ -7,7 +7,16 @@ class EmbedWithReactions(commands.Cog):
         self.bot = bot
         
     @commands.command()
-    async def EmbedWithReaction(self, ctx):
+    async def AutoEmbedWithReaction(self, ctx):
+        embed1 = discord.Embed(color=ctx.author.color).add_field(name="Example", value="Page 1")
+        embed2 = discord.Embed(color=ctx.author.color).add_field(name="Example", value="Page 2")
+        embed3 = discord.Embed(color=ctx.author.color).add_field(name="Example", value="Page 3")
+        paginator = DiscordUtils.Pagination.AutoEmbedPaginator(ctx)
+        embeds = [embed1, embed2, embed3]
+        await paginator.run(embeds)
+        
+    @commands.command()
+    async def ManualEmbedWithReaction(self, ctx):
         embed1 = discord.Embed(color=ctx.author.color).add_field(name="Example1", value="Page 1").add_field(name = 'Example2', value = 'Page 1')
         embed2 = discord.Embed(color=ctx.author.color).add_field(name="Example1", value="Page 2").add_field(name = 'Example2', value = 'Page 2').add_field(name = 'Example3', value = 'Page 1')
         embed3 = discord.Embed(color=ctx.author.color).add_field(name="Example1", value="Page 3")

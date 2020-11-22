@@ -7,8 +7,7 @@ client = commands.Bot(command_prefix = 'PUT YOUR PREFIX HERE!')
 async def on_ready:
     print(f'{client.user} has logged in and is online!')
 
-extensions = ['cogs.Moderation',
-              'cogs.HelpCmd',
+extensions = ['cogs.HelpCmd',
               'cogs.Music']
               
 if __name__ == '__main__':
